@@ -24,7 +24,7 @@
             --border-color: rgba(201,169,98,0.1);
         }
 
-        [data-theme="dark"] { 
+        [data-theme="dark"] {
             --primary: #f4f1ea;
             --secondary: #d4b978;
             --accent: #2d2d2d;
@@ -38,12 +38,8 @@
             --border-color: rgba(201,169,98,0.2);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg-body);
@@ -53,7 +49,6 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        /* Header Elegante */
         header {
             background: var(--white);
             color: var(--primary);
@@ -75,12 +70,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
         }
 
         .logo {
@@ -139,7 +128,6 @@
             font-weight: 600;
         }
 
-        /* Main Layout */
         .app-container {
             display: grid;
             grid-template-columns: 380px 1fr;
@@ -150,7 +138,6 @@
             min-height: calc(100vh - 100px);
         }
 
-        /* Sidebar */
         .sidebar {
             background: var(--bg-card);
             border-radius: 20px;
@@ -160,7 +147,6 @@
             position: sticky;
             top: 120px;
             border: 1px solid var(--border-color);
-            transition: background 0.3s;
             max-height: calc(100vh - 140px);
             overflow-y: auto;
         }
@@ -264,11 +250,6 @@
             color: var(--bg-card);
         }
 
-        .btn-success {
-            background: var(--success);
-        }
-
-        /* Templates Section */
         .templates-section {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
@@ -299,7 +280,6 @@
             color: white;
         }
 
-        /* Main Content */
         .main-content {
             display: flex;
             flex-direction: column;
@@ -316,7 +296,6 @@
             box-shadow: var(--shadow);
             flex-wrap: wrap;
             gap: 1rem;
-            transition: background 0.3s;
         }
 
         .search-box {
@@ -361,7 +340,6 @@
             color: var(--white);
         }
 
-        /* Contacts Grid */
         .contacts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -373,11 +351,10 @@
             border-radius: 20px;
             padding: 1.5rem;
             box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
             border: 1px solid var(--border-color);
-            animation: fadeInUp 0.5s ease forwards;
         }
 
         .contact-card:hover {
@@ -395,12 +372,6 @@
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
         }
 
         .card-header {
@@ -435,7 +406,6 @@
             color: white;
             font-weight: 600;
             font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(201,169,98,0.3);
         }
 
         .card-body {
@@ -474,12 +444,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .personal-details p {
-            font-size: 0.9rem;
-            color: var(--text);
-            line-height: 1.5;
         }
 
         .card-footer {
@@ -524,7 +488,6 @@
             background: var(--danger);
         }
 
-        /* Modal Styles */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -553,15 +516,9 @@
             max-width: 500px;
             width: 90%;
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-            transform: scale(0.9);
-            transition: transform 0.3s;
             position: relative;
             max-height: 90vh;
             overflow-y: auto;
-        }
-
-        .modal-overlay.active .modal {
-            transform: scale(1);
         }
 
         .modal-header {
@@ -576,11 +533,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .modal-header p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
         .close-modal {
             position: absolute;
             top: 1.5rem;
@@ -590,14 +542,8 @@
             font-size: 1.5rem;
             color: var(--text-light);
             cursor: pointer;
-            transition: color 0.3s;
         }
 
-        .close-modal:hover {
-            color: var(--primary);
-        }
-
-        /* Recording Interface */
         .recording-interface {
             display: flex;
             flex-direction: column;
@@ -612,45 +558,28 @@
             border: 4px solid var(--secondary);
             background: var(--bg-card);
             cursor: pointer;
-            position: relative;
-            transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .record-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(201,169,98,0.3);
+            transition: all 0.3s;
         }
 
         .record-button.recording {
             background: var(--danger);
             border-color: var(--danger);
-            animation: recordPulse 1.5s infinite;
+            animation: pulse 1.5s infinite;
         }
 
-        @keyframes recordPulse {
+        @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
             70% { box-shadow: 0 0 0 20px rgba(231, 76, 60, 0); }
             100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
-        }
-
-        .record-button i {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            transition: color 0.3s;
-        }
-
-        .record-button.recording i {
-            color: white;
         }
 
         .timer {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             color: var(--primary);
-            font-variant-numeric: tabular-nums;
         }
 
         .modal-actions {
@@ -666,33 +595,13 @@
             border: none;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
         }
 
-        .btn-cancel {
-            background: var(--accent);
-            color: var(--text);
-        }
+        .btn-cancel { background: var(--accent); color: var(--text); }
+        .btn-send { background: var(--secondary); color: white; }
 
-        .btn-send {
-            background: var(--secondary);
-            color: white;
-        }
-
-        /* Settings Modal */
-        .settings-section {
-            margin-bottom: 2rem;
-        }
-
-        .settings-section h3 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
+        .settings-section { margin-bottom: 2rem; }
+        
         .setting-item {
             display: flex;
             justify-content: space-between;
@@ -713,9 +622,7 @@
             transition: background 0.3s;
         }
 
-        .toggle-switch.active {
-            background: var(--secondary);
-        }
+        .toggle-switch.active { background: var(--secondary); }
 
         .toggle-switch::after {
             content: '';
@@ -729,9 +636,7 @@
             transition: transform 0.3s;
         }
 
-        .toggle-switch.active::after {
-            transform: translateX(24px);
-        }
+        .toggle-switch.active::after { transform: translateX(24px); }
 
         .import-export-btns {
             display: grid;
@@ -746,27 +651,13 @@
             background: transparent;
             color: var(--primary);
             cursor: pointer;
-            transition: all 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .import-export-btns button:hover {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .import-export-btns i {
-            font-size: 1.5rem;
-        }
-
-        /* Birthday Modal */
-        .birthday-list {
-            max-height: 400px;
-            overflow-y: auto;
-        }
+        .birthday-list { max-height: 400px; overflow-y: auto; }
 
         .birthday-item {
             display: flex;
@@ -784,10 +675,6 @@
             background: linear-gradient(90deg, rgba(231,76,60,0.1), var(--accent));
         }
 
-        .birthday-item.soon {
-            border-left-color: var(--warning);
-        }
-
         .birthday-avatar {
             width: 50px;
             height: 50px;
@@ -800,34 +687,36 @@
             font-weight: 600;
         }
 
-        .birthday-info h4 {
+        /* Google Calendar Section */
+        .calendar-section {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(201,169,98,0.1), rgba(201,169,98,0.05));
+            border-radius: 12px;
+            border: 1px solid var(--secondary);
+        }
+
+        .calendar-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: transparent;
+            border: 2px solid var(--secondary);
+            border-radius: 8px;
             color: var(--primary);
-            margin-bottom: 0.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
         }
 
-        .birthday-info p {
-            font-size: 0.85rem;
-            color: var(--text-light);
+        .calendar-btn:hover {
+            background: var(--secondary);
+            color: white;
         }
 
-        .birthday-date {
-            margin-left: auto;
-            text-align: right;
-        }
-
-        .birthday-date .day {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .birthday-date .month {
-            font-size: 0.75rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-        }
-
-        /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -841,94 +730,28 @@
             align-items: center;
             gap: 0.75rem;
             transform: translateX(400px);
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: transform 0.4s ease;
             z-index: 1001;
         }
 
-        .toast.show {
-            transform: translateX(0);
-        }
+        .toast.show { transform: translateX(0); }
 
-        .toast i {
-            color: var(--secondary);
-        }
-
-        /* Empty State */
         .empty-state {
             text-align: center;
             padding: 4rem 2rem;
             color: var(--text-light);
         }
 
-        .empty-state i {
-            font-size: 4rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            opacity: 0.5;
-        }
+        input[type="file"] { display: none; }
 
-        .empty-state h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
         @media (max-width: 968px) {
-            .app-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                position: static;
-                max-height: none;
-            }
-            
-            .contacts-grid {
-                grid-template-columns: 1fr;
-            }
+            .app-container { grid-template-columns: 1fr; }
+            .sidebar { position: static; max-height: none; }
         }
 
         @media (max-width: 600px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .toolbar {
-                flex-direction: column;
-            }
-            
-            .search-box {
-                width: 100%;
-            }
-
-            .templates-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .import-export-btns {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Hidden file input */
-        input[type="file"] {
-            display: none;
+            .header-content { flex-direction: column; gap: 1rem; text-align: center; }
+            .toolbar { flex-direction: column; }
         }
     </style>
 </head>
@@ -936,14 +759,12 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo-section">
-                    <div>
-                        <div class="logo">
-                            <i class="fas fa-gem"></i>
-                            EmpathyCRM
-                        </div>
-                        <div class="tagline">Digitalización de la Empatía</div>
+                <div>
+                    <div class="logo">
+                        <i class="fas fa-gem"></i>
+                        EmpathyCRM
                     </div>
+                    <div class="tagline">Digitalización de la Empatía</div>
                 </div>
                 <div class="header-actions">
                     <button class="icon-btn" onclick="toggleTheme()" title="Cambiar tema">
@@ -996,8 +817,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Profesión / Empresa</label>
-                    <input type="text" id="profession" placeholder="Ej: Directora de Marketing en...">
+                    <label>Rol - Cargo y Empresa</label>
+                    <input type="text" id="profession" placeholder="Ej: Directora de Marketing en Empresa XYZ">
+                </div>
+
+                <div class="form-group">
+                    <label>Sector o Especialidad</label>
+                    <input type="text" id="sector" placeholder="Ej: Tecnología, Salud, Consultoría...">
                 </div>
 
                 <div class="form-group">
@@ -1008,13 +834,25 @@
                         <option value="partner">Partner</option>
                         <option value="amigo">Amigo</option>
                         <option value="vip">VIP</option>
-                        <option value="familia">Familia</option>
+                        <option value="proveedor">Proveedor</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Detalles Personales Clave</label>
                     <textarea id="personalDetails" placeholder="Hobbies, nombres de hijos, mascotas, retos actuales, preferencias..."></textarea>
+                </div>
+
+                <div class="calendar-section">
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-calendar-alt" style="color: var(--secondary);"></i>
+                        Recordatorio Google Calendar
+                    </label>
+                    <input type="datetime-local" id="calendarReminder" style="margin-top: 0.5rem;">
+                    <button type="button" class="calendar-btn" onclick="addToCalendar()">
+                        <i class="fab fa-google"></i>
+                        Añadir recordatorio
+                    </button>
                 </div>
 
                 <div class="templates-section">
@@ -1062,62 +900,48 @@
                     <button class="tag-filter" data-filter="vip">VIP</button>
                     <button class="tag-filter" data-filter="cliente">Clientes</button>
                     <button class="tag-filter" data-filter="prospecto">Prospectos</button>
-                    <button class="tag-filter" data-filter="familia">Familia</button>
+                    <button class="tag-filter" data-filter="proveedor">Proveedores</button>
                 </div>
             </div>
 
             <div id="contactsList" class="contacts-grid"></div>
 
             <div id="emptyState" class="empty-state" style="display: none;">
-                <i class="fas fa-address-book"></i>
-                <h3>No hay contactos aún</h3>
+                <i class="fas fa-address-book" style="font-size: 4rem; color: var(--secondary); opacity: 0.5;"></i>
+                <h3 style="font-family: 'Playfair Display', serif; margin-top: 1rem;">No hay contactos aún</h3>
                 <p>Comienza a construir relaciones significativas añadiendo tu primer contacto</p>
             </div>
         </main>
     </div>
 
-    <!-- Modal Grabación -->
+    <!-- Modales -->
     <div id="recordModal" class="modal-overlay">
         <div class="modal">
-            <button class="close-modal" onclick="closeModal('recordModal')">
-                <i class="fas fa-times"></i>
-            </button>
-            
+            <button class="close-modal" onclick="closeModal('recordModal')"><i class="fas fa-times"></i></button>
             <div class="modal-header">
                 <h2>Mensaje Personal</h2>
                 <p>Graba un mensaje de voz de 20 segundos</p>
             </div>
-
             <div class="recording-interface">
                 <button class="record-button" id="recordBtn" onclick="toggleRecording()">
                     <i class="fas fa-microphone"></i>
                 </button>
-                
                 <div class="timer" id="timer">00:00</div>
-                
                 <div class="modal-actions">
                     <button class="btn-cancel" onclick="closeModal('recordModal')">Cancelar</button>
-                    <button class="btn-send" onclick="sendMessage()">
-                        <i class="fas fa-paper-plane"></i>
-                        Enviar
-                    </button>
+                    <button class="btn-send" onclick="sendMessage()"><i class="fas fa-paper-plane"></i> Enviar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Configuración -->
     <div id="settingsModal" class="modal-overlay">
         <div class="modal">
-            <button class="close-modal" onclick="closeModal('settingsModal')">
-                <i class="fas fa-times"></i>
-            </button>
-            
+            <button class="close-modal" onclick="closeModal('settingsModal')"><i class="fas fa-times"></i></button>
             <div class="modal-header">
                 <h2>Configuración</h2>
                 <p>Personaliza tu experiencia</p>
             </div>
-
             <div class="settings-section">
                 <h3><i class="fas fa-palette"></i> Apariencia</h3>
                 <div class="setting-item">
@@ -1125,64 +949,40 @@
                     <div class="toggle-switch" id="darkModeToggle" onclick="toggleTheme()"></div>
                 </div>
             </div>
-
             <div class="settings-section">
                 <h3><i class="fas fa-bell"></i> Notificaciones</h3>
                 <div class="setting-item">
                     <span>Recordatorios de cumpleaños</span>
                     <div class="toggle-switch active" id="notifToggle" onclick="toggleNotifications()"></div>
                 </div>
-                <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">
-                    Recibe notificaciones del navegador cuando alguien cumpla años
-                </p>
             </div>
-
             <div class="settings-section">
                 <h3><i class="fas fa-database"></i> Backup de datos</h3>
                 <div class="import-export-btns">
-                    <button onclick="exportData()">
-                        <i class="fas fa-download"></i>
-                        <span>Exportar JSON</span>
-                    </button>
-                    <button onclick="document.getElementById('importFile').click()">
-                        <i class="fas fa-upload"></i>
-                        <span>Importar JSON</span>
-                    </button>
+                    <button onclick="exportData()"><i class="fas fa-download"></i><span>Exportar JSON</span></button>
+                    <button onclick="document.getElementById('importFile').click()"><i class="fas fa-upload"></i><span>Importar JSON</span></button>
                 </div>
                 <input type="file" id="importFile" accept=".json" onchange="importData(this)">
-                <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem; text-align: center;">
-                    Exporta tus datos regularmente para no perderlos al limpiar el navegador
-                </p>
             </div>
         </div>
     </div>
 
-    <!-- Modal Cumpleaños -->
     <div id="birthdayModal" class="modal-overlay">
         <div class="modal">
-            <button class="close-modal" onclick="closeModal('birthdayModal')">
-                <i class="fas fa-times"></i>
-            </button>
-            
+            <button class="close-modal" onclick="closeModal('birthdayModal')"><i class="fas fa-times"></i></button>
             <div class="modal-header">
                 <h2><i class="fas fa-birthday-cake" style="color: var(--secondary);"></i> Próximos Cumpleaños</h2>
-                <p>No olvides felicitar a tus contactos importantes</p>
             </div>
-
-            <div class="birthday-list" id="birthdayList">
-                <!-- Se renderiza dinámicamente -->
-            </div>
+            <div class="birthday-list" id="birthdayList"></div>
         </div>
     </div>
 
-    <!-- Toast -->
     <div id="toast" class="toast">
         <i class="fas fa-check-circle"></i>
         <span id="toastMessage">Operación exitosa</span>
     </div>
 
     <script>
-        // Estado global
         let contacts = JSON.parse(localStorage.getItem('empathyCRM_contacts')) || [];
         let settings = JSON.parse(localStorage.getItem('empathyCRM_settings')) || {
             darkMode: false,
@@ -1195,37 +995,24 @@
         let timerInterval = null;
         let currentContactId = null;
 
-        // Plantillas de mensajes
         const templates = {
-            birthday: `¡Feliz cumpleaños {nombre}! 🎉\n\nEspero que tengas un día maravilloso rodeado de tus seres queridos. Que este nuevo año venga cargado de éxitos y momentos inolvidables.\n\nUn abrazo,`,
-            
-            followup: `Hola {nombre},\n\nQuería contactarte para ver cómo va todo con [tema específico]. Me acordé de ti porque [detalle personal].\n\n¿Tienes un momento para hablar esta semana?\n\nSaludos,`,
-            
-            value: `Hola {nombre},\n\nVi [artículo/recurso] y pensé inmediatamente en ti porque sé que te interesa [tema relacionado con detalle personal].\n\nEspero te sea útil. ¡Cuéntame qué te parece!\n\nUn saludo,`,
-            
-            reconnect: `Hola {nombre},\n\nHa pasado tiempo desde la última vez que hablamos. Me preguntaba cómo te va con [proyecto/reto mencionado anteriormente].\n\nMe encantaría ponernos al día. ¿Qué tal tu disponibilidad esta semana?\n\nAbrazos,`
+            birthday: `¡Feliz cumpleaños {nombre}! 🎉\n\nEspero que tengas un día maravilloso rodeado de tus seres queridos.\n\nUn abrazo,`,
+            followup: `Hola {nombre},\n\nQuería contactarte para ver cómo va todo. Me acordé de ti porque [detalle personal].\n\n¿Tienes un momento para hablar esta semana?\n\nSaludos,`,
+            value: `Hola {nombre},\n\nVi [artículo/recurso] y pensé inmediatamente en ti porque sé que te interesa [tema relacionado].\n\nUn saludo,`,
+            reconnect: `Hola {nombre},\n\nHa pasado tiempo desde la última vez que hablamos. Me encantaría ponernos al día.\n\nAbrazos,`
         };
 
-        // Inicialización
         document.addEventListener('DOMContentLoaded', () => {
             loadSettings();
             renderContacts();
-            updateStats();
             checkBirthdays();
-            
-            // Verificar cumpleaños cada hora
             setInterval(checkBirthdays, 3600000);
-            
-            // Configurar fecha de hoy
             document.getElementById('lastContact').valueAsDate = new Date();
-            
-            // Solicitar permiso de notificaciones
             if (settings.notifications && 'Notification' in window) {
                 Notification.requestPermission();
             }
         });
 
-        // Configuración inicial
         function loadSettings() {
             if (settings.darkMode) {
                 document.documentElement.setAttribute('data-theme', 'dark');
@@ -1237,7 +1024,6 @@
         function toggleTheme() {
             settings.darkMode = !settings.darkMode;
             localStorage.setItem('empathyCRM_settings', JSON.stringify(settings));
-            
             if (settings.darkMode) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 document.getElementById('themeIcon').classList.replace('fa-moon', 'fa-sun');
@@ -1252,18 +1038,38 @@
         function toggleNotifications() {
             settings.notifications = !settings.notifications;
             localStorage.setItem('empathyCRM_settings', JSON.stringify(settings));
-            
-            const toggle = document.getElementById('notifToggle');
-            toggle.classList.toggle('active');
-            
+            document.getElementById('notifToggle').classList.toggle('active');
             if (settings.notifications && 'Notification' in window) {
                 Notification.requestPermission();
             }
-            
             showToast(settings.notifications ? 'Notificaciones activadas' : 'Notificaciones desactivadas');
         }
 
-        // Gestión de contactos
+        // Google Calendar Integration
+        function addToCalendar() {
+            const firstName = document.getElementById('firstName').value || 'Contacto';
+            const lastName = document.getElementById('lastName').value || '';
+            const reminderDate = document.getElementById('calendarReminder').value;
+            const personalDetails = document.getElementById('personalDetails').value || '';
+            
+            if (!reminderDate) {
+                showToast('Selecciona fecha y hora para el recordatorio');
+                return;
+            }
+            
+            const date = new Date(reminderDate);
+            const title = `Seguimiento: ${firstName} ${lastName}`;
+            const description = `Recordatorio de contacto con ${firstName} ${lastName}.\n\nDetalles: ${personalDetails}\n\n---\nCreado con EmpathyCRM`;
+            
+            const startDate = date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            const endDate = new Date(date.getTime() + 30 * 60000).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(description)}`;
+            
+            window.open(googleCalendarUrl, '_blank');
+            showToast('Abriendo Google Calendar...');
+        }
+
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             addContact();
@@ -1291,6 +1097,7 @@
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 profession: document.getElementById('profession').value,
+                sector: document.getElementById('sector').value,
                 category: document.getElementById('category').value,
                 personalDetails: document.getElementById('personalDetails').value,
                 lastContact: document.getElementById('lastContact').value,
@@ -1300,7 +1107,6 @@
             contacts.push(contact);
             saveContacts();
             renderContacts();
-            updateStats();
             checkBirthdays();
             resetForm();
             showToast('Contacto guardado con éxito');
@@ -1311,7 +1117,6 @@
                 contacts = contacts.filter(c => c.id !== id);
                 saveContacts();
                 renderContacts();
-                updateStats();
                 checkBirthdays();
                 showToast('Contacto eliminado');
             }
@@ -1326,49 +1131,32 @@
             document.getElementById('lastContact').valueAsDate = new Date();
         }
 
-        // Plantillas
         function applyTemplate(type) {
             const firstName = document.getElementById('firstName').value || '{nombre}';
-            const personalDetails = document.getElementById('personalDetails').value || '[detalles personales]';
-            
-            let template = templates[type]
-                .replace(/{nombre}/g, firstName)
-                .replace(/\[detalle personal\]/g, personalDetails);
-            
-            // Copiar al portapapeles
+            let template = templates[type].replace(/{nombre}/g, firstName);
             navigator.clipboard.writeText(template).then(() => {
                 showToast('Plantilla copiada al portapapeles');
             });
-            
-            // También mostrar en un alert para que el usuario la vea
-            setTimeout(() => {
-                if (confirm('Plantilla copiada. ¿Deseas ver el mensaje completo?')) {
-                    alert(template);
-                }
-            }, 100);
         }
 
-        // Renderizado
         function renderContacts(searchTerm = '') {
             const container = document.getElementById('contactsList');
             const emptyState = document.getElementById('emptyState');
             
             let filtered = contacts;
-
             if (currentFilter !== 'all') {
                 filtered = filtered.filter(c => c.category === currentFilter);
             }
-
             if (searchTerm) {
                 const term = searchTerm.toLowerCase();
                 filtered = filtered.filter(c => 
                     c.firstName.toLowerCase().includes(term) ||
                     c.lastName.toLowerCase().includes(term) ||
-                    c.profession.toLowerCase().includes(term) ||
-                    c.personalDetails.toLowerCase().includes(term)
+                    (c.profession && c.profession.toLowerCase().includes(term)) ||
+                    (c.sector && c.sector.toLowerCase().includes(term)) ||
+                    (c.personalDetails && c.personalDetails.toLowerCase().includes(term))
                 );
             }
-
             filtered.sort((a, b) => new Date(b.lastContact) - new Date(a.lastContact));
 
             if (filtered.length === 0) {
@@ -1381,30 +1169,21 @@
             container.innerHTML = filtered.map((contact, index) => {
                 const initials = `${contact.firstName[0]}${contact.lastName[0]}`.toUpperCase();
                 const lastContactDate = contact.lastContact ? 
-                    new Date(contact.lastContact).toLocaleDateString('es-ES', { 
-                        day: 'numeric', 
-                        month: 'short', 
-                        year: 'numeric' 
-                    }) : 'Sin contacto';
+                    new Date(contact.lastContact).toLocaleDateString('es-ES', {day: 'numeric', month: 'short', year: 'numeric'}) : 'Sin contacto';
                 
                 const daysSinceContact = contact.lastContact ? 
-                    Math.floor((new Date() - new Date(contact.lastContact)) / (1000 * 60 * 60 * 24)) : 
-                    null;
+                    Math.floor((new Date() - new Date(contact.lastContact)) / (1000 * 60 * 60 * 24)) : null;
 
                 let urgencyBadge = '';
                 if (daysSinceContact > 30) {
                     urgencyBadge = '<span style="color: var(--danger); font-size: 0.75rem; font-weight: 600;">¡Contactar!</span>';
                 }
 
-                // Verificar cumpleaños
                 let birthdayBadge = '';
                 if (contact.birthday) {
                     const today = new Date();
                     const birthDate = new Date(contact.birthday);
-                    const isToday = today.getDate() === birthDate.getDate() && 
-                                   today.getMonth() === birthDate.getMonth();
-                    
-                    if (isToday) {
+                    if (today.getDate() === birthDate.getDate() && today.getMonth() === birthDate.getMonth()) {
                         birthdayBadge = '<div class="birthday-badge">¡Hoy!</div>';
                     }
                 }
@@ -1415,7 +1194,8 @@
                         <div class="card-header">
                             <div class="contact-info">
                                 <h3>${contact.firstName} ${contact.lastName}</h3>
-                                <div class="contact-role">${contact.profession || 'Sin profesión'}</div>
+                                <div class="contact-role">${contact.profession || 'Sin cargo/empresa'}</div>
+                                ${contact.sector ? `<div style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.25rem;"><i class="fas fa-industry" style="margin-right: 0.5rem;"></i>${contact.sector}</div>` : ''}
                                 <span style="display: inline-block; margin-top: 0.5rem; padding: 0.25rem 0.75rem; background: var(--accent); border-radius: 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 600; color: var(--text-light);">
                                     ${contact.category}
                                 </span>
@@ -1424,33 +1204,10 @@
                         </div>
                         
                         <div class="card-body">
-                            ${contact.phone ? `
-                                <div class="detail-item">
-                                    <i class="fas fa-phone"></i>
-                                    <span>${contact.phone}</span>
-                                </div>
-                            ` : ''}
-                            
-                            ${contact.email ? `
-                                <div class="detail-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>${contact.email}</span>
-                                </div>
-                            ` : ''}
-
-                            ${contact.birthday ? `
-                                <div class="detail-item">
-                                    <i class="fas fa-birthday-cake"></i>
-                                    <span>${new Date(contact.birthday).toLocaleDateString('es-ES', {day: 'numeric', month: 'long'})}</span>
-                                </div>
-                            ` : ''}
-
-                            ${contact.personalDetails ? `
-                                <div class="personal-details">
-                                    <h4><i class="fas fa-heart"></i> Detalles Importantes</h4>
-                                    <p>${contact.personalDetails}</p>
-                                </div>
-                            ` : ''}
+                            ${contact.phone ? `<div class="detail-item"><i class="fas fa-phone"></i><span>${contact.phone}</span></div>` : ''}
+                            ${contact.email ? `<div class="detail-item"><i class="fas fa-envelope"></i><span>${contact.email}</span></div>` : ''}
+                            ${contact.birthday ? `<div class="detail-item"><i class="fas fa-birthday-cake"></i><span>${new Date(contact.birthday).toLocaleDateString('es-ES', {day: 'numeric', month: 'long'})}</span></div>` : ''}
+                            ${contact.personalDetails ? `<div class="personal-details"><h4><i class="fas fa-heart"></i> Detalles Importantes</h4><p>${contact.personalDetails}</p></div>` : ''}
                         </div>
 
                         <div class="card-footer">
@@ -1459,18 +1216,10 @@
                                 ${urgencyBadge}
                             </div>
                             <div class="card-actions">
-                                <button class="action-btn" onclick="openRecordModal(${contact.id})" title="Grabar mensaje">
-                                    <i class="fas fa-microphone"></i>
-                                </button>
-                                <button class="action-btn" onclick="copyTemplateForContact(${contact.id})" title="Copiar plantilla">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                                <button class="action-btn" onclick="window.open('https://wa.me/${contact.phone?.replace(/\D/g, '')}', '_blank')" title="WhatsApp">
-                                    <i class="fab fa-whatsapp"></i>
-                                </button>
-                                <button class="action-btn delete" onclick="deleteContact(${contact.id})" title="Eliminar">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                                <button class="action-btn" onclick="openRecordModal(${contact.id})" title="Grabar mensaje"><i class="fas fa-microphone"></i></button>
+                                <button class="action-btn" onclick="copyTemplateForContact(${contact.id})" title="Copiar plantilla"><i class="fas fa-copy"></i></button>
+                                <button class="action-btn" onclick="window.open('https://wa.me/${contact.phone?.replace(/\D/g, '')}', '_blank')" title="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="action-btn delete" onclick="deleteContact(${contact.id})" title="Eliminar"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>
                     </div>
@@ -1481,56 +1230,36 @@
         function copyTemplateForContact(id) {
             const contact = contacts.find(c => c.id === id);
             if (!contact) return;
-            
             const template = `Hola ${contact.firstName},\n\nEspero que estés teniendo un gran día. Me acordé de ti porque ${contact.personalDetails || 'quiero mantenernos en contacto'}.\n\n¿Cómo va todo por tu lado?\n\nUn abrazo,`;
-            
             navigator.clipboard.writeText(template).then(() => {
-                showToast(`Mensaje personalizado para ${contact.firstName} copiado`);
+                showToast(`Mensaje para ${contact.firstName} copiado`);
             });
         }
 
-        function updateStats() {
-            // Actualizar contadores en el header si los hubiera
-        }
-
-        // Cumpleaños
         function checkBirthdays() {
             const today = new Date();
             const upcoming = [];
             
             contacts.forEach(contact => {
                 if (!contact.birthday) return;
-                
                 const birthDate = new Date(contact.birthday);
-                const isToday = today.getDate() === birthDate.getDate() && 
-                               today.getMonth() === birthDate.getMonth();
+                const isToday = today.getDate() === birthDate.getDate() && today.getMonth() === birthDate.getMonth();
                 
-                // Calcular próximo cumpleaños
                 const nextBirthday = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
-                if (nextBirthday < today) {
-                    nextBirthday.setFullYear(today.getFullYear() + 1);
-                }
-                
+                if (nextBirthday < today) nextBirthday.setFullYear(today.getFullYear() + 1);
                 const daysUntil = Math.floor((nextBirthday - today) / (1000 * 60 * 60 * 24));
                 
                 if (isToday || daysUntil <= 7) {
-                    upcoming.push({
-                        ...contact,
-                        isToday,
-                        daysUntil
-                    });
-                    
-                    // Enviar notificación del navegador
+                    upcoming.push({...contact, isToday, daysUntil});
                     if (isToday && settings.notifications && 'Notification' in window && Notification.permission === 'granted') {
                         new Notification('¡Cumpleaños hoy! 🎂', {
-                            body: `${contact.firstName} ${contact.lastName} cumple años hoy. ¡No olvides felicitarle!`,
+                            body: `${contact.firstName} ${contact.lastName} cumple años hoy.`,
                             icon: 'https://cdn-icons-png.flaticon.com/512/2926/2926319.png'
                         });
                     }
                 }
             });
             
-            // Actualizar badge
             const badge = document.getElementById('birthdayBadge');
             const todayBirthdays = upcoming.filter(u => u.isToday).length;
             if (todayBirthdays > 0) {
@@ -1539,7 +1268,6 @@
             } else {
                 badge.style.display = 'none';
             }
-            
             return upcoming;
         }
 
@@ -1548,25 +1276,18 @@
             const list = document.getElementById('birthdayList');
             
             if (upcoming.length === 0) {
-                list.innerHTML = `
-                    <div style="text-align: center; padding: 2rem; color: var(--text-light);">
-                        <i class="fas fa-calendar-check" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-                        <p>No hay cumpleaños próximos</p>
-                    </div>
-                `;
+                list.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--text-light);"><i class="fas fa-calendar-check" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i><p>No hay cumpleaños próximos</p></div>';
             } else {
                 list.innerHTML = upcoming.sort((a, b) => a.daysUntil - b.daysUntil).map(contact => {
                     const initials = `${contact.firstName[0]}${contact.lastName[0]}`.toUpperCase();
                     const date = new Date(contact.birthday);
-                    
                     return `
                         <div class="birthday-item ${contact.isToday ? 'today' : contact.daysUntil <= 3 ? 'soon' : ''}">
                             <div class="birthday-avatar">${initials}</div>
                             <div class="birthday-info">
                                 <h4>${contact.firstName} ${contact.lastName}</h4>
-                                <p>${contact.profession || 'Sin profesión'}</p>
-                                ${contact.isToday ? '<span style="color: var(--danger); font-size: 0.8rem; font-weight: 600;">¡Hoy!</span>' : 
-                                  `<span style="color: var(--text-light); font-size: 0.8rem;">En ${contact.daysUntil} días</span>`}
+                                <p>${contact.profession || 'Sin cargo/empresa'}</p>
+                                ${contact.isToday ? '<span style="color: var(--danger); font-size: 0.8rem; font-weight: 600;">¡Hoy!</span>' : `<span style="color: var(--text-light); font-size: 0.8rem;">En ${contact.daysUntil} días</span>`}
                             </div>
                             <div class="birthday-date">
                                 <div class="day">${date.getDate()}</div>
@@ -1576,11 +1297,9 @@
                     `;
                 }).join('');
             }
-            
             document.getElementById('birthdayModal').classList.add('active');
         }
 
-        // Grabación de voz
         function openRecordModal(contactId) {
             currentContactId = contactId;
             document.getElementById('recordModal').classList.add('active');
@@ -1603,31 +1322,21 @@
 
         async function toggleRecording() {
             const btn = document.getElementById('recordBtn');
-            
             if (!mediaRecorder || mediaRecorder.state === 'inactive') {
                 try {
                     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                     mediaRecorder = new MediaRecorder(stream);
-                    
-                    mediaRecorder.ondataavailable = (e) => {
-                        audioChunks.push(e.data);
-                    };
-
+                    mediaRecorder.ondataavailable = (e) => audioChunks.push(e.data);
                     mediaRecorder.onstop = () => {
                         const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                        const audioUrl = URL.createObjectURL(audioBlob);
-                        console.log('Grabación completada:', audioUrl);
+                        console.log('Grabación completada:', URL.createObjectURL(audioBlob));
                     };
-
                     mediaRecorder.start();
                     btn.classList.add('recording');
-                    
                     recordingStartTime = Date.now();
                     timerInterval = setInterval(updateTimer, 1000);
-                    
                 } catch (err) {
                     showToast('Error al acceder al micrófono');
-                    console.error(err);
                 }
             } else {
                 mediaRecorder.stop();
@@ -1642,7 +1351,6 @@
             const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
             const seconds = (elapsed % 60).toString().padStart(2, '0');
             document.getElementById('timer').textContent = `${minutes}:${seconds}`;
-            
             if (elapsed >= 20) {
                 toggleRecording();
                 showToast('Límite de 20 segundos alcanzado');
@@ -1654,19 +1362,16 @@
                 showToast('Primero graba un mensaje');
                 return;
             }
-            
             const contact = contacts.find(c => c.id === currentContactId);
             if (contact) {
                 contact.lastContact = new Date().toISOString().split('T')[0];
                 saveContacts();
                 renderContacts();
             }
-            
-            showToast('¡Mensaje enviado con éxito!');
+            showToast('¡Mensaje enviado!');
             closeModal('recordModal');
         }
 
-        // Exportar/Importar
         function exportData() {
             const dataStr = JSON.stringify(contacts, null, 2);
             const dataBlob = new Blob([dataStr], {type: 'application/json'});
@@ -1676,54 +1381,44 @@
             link.download = `empathyCRM_backup_${new Date().toISOString().split('T')[0]}.json`;
             link.click();
             URL.revokeObjectURL(url);
-            showToast('Datos exportados correctamente');
+            showToast('Datos exportados');
         }
 
         function importData(input) {
             const file = input.files[0];
             if (!file) return;
-            
             const reader = new FileReader();
             reader.onload = (e) => {
                 try {
                     const imported = JSON.parse(e.target.result);
                     if (Array.isArray(imported)) {
-                        if (confirm(`¿Importar ${imported.length} contactos? Esto reemplazará tus contactos actuales (${contacts.length}).`)) {
+                        if (confirm(`¿Importar ${imported.length} contactos?`)) {
                             contacts = imported;
                             saveContacts();
                             renderContacts();
-                            updateStats();
                             checkBirthdays();
-                            showToast('Datos importados correctamente');
+                            showToast('Datos importados');
                         }
-                    } else {
-                        throw new Error('Formato inválido');
                     }
                 } catch (err) {
-                    showToast('Error al importar: archivo inválido');
-                    console.error(err);
+                    showToast('Error: archivo inválido');
                 }
             };
             reader.readAsText(file);
-            input.value = ''; // Reset input
+            input.value = '';
         }
 
         function openSettingsModal() {
             document.getElementById('settingsModal').classList.add('active');
         }
 
-        // Toast
         function showToast(message) {
             const toast = document.getElementById('toast');
             document.getElementById('toastMessage').textContent = message;
             toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // Cerrar modales al hacer click fuera
         document.querySelectorAll('.modal-overlay').forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if (e.target === e.currentTarget) {
